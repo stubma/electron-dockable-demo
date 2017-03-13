@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>test</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h1>Testing...</h1>
+
+    <button id="btn">Click Me</button>
+
+    <script>
+      (() => {
+        'use strict';
+        const Electron = require('electron');
+
+        let btn = document.getElementById('btn');
+        btn.onclick = function () {
+          Editor.Ipc.sendToMain('foobar:open-panel');
+        }
+
+        Electron.ipcRenderer.on('foobar:run', function (...args) {
+          console.log(args)
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<template id="nested-shadow-dom">
+  <div id="wrapper"></div>
+</template>
+
+<template id="get-focusable-from-01">
+  <div id="g-0">
+    <div id="g-00">
+      <div id="g-000"></div>
+
+      <div id="g-001">
+        <div id="g-0010">
+          <div id="g-00100" focusable></div>
+        </div>
+      </div>
+
+      <div id="g-002"></div>
+    </div>
+  </div>
+</template>
+
+<template id="get-focusable-from-02">
+  <div id="g-0">
+    <div id="g-00">
+      <div id="g-000"></div>
+
+      <div id="g-001">
+        <div id="g-0010">
+          <div id="g-00100"></div>
+        </div>
+      </div>
+
+      <div id="g-002" focusable></div>
+    </div>
+  </div>
+</template>
+
+<template id="get-focusable-from-03">
+  <div id="g-0">
+    <div id="g-00">
+      <div id="g-000"></div>
+
+      <div id="g-001">
+        <div id="g-0010">
+          <div id="g-00100"></div>
+        </div>
+      </div>
+
+      <div id="g-002"></div>
+    </div>
+  </div>
+</template>

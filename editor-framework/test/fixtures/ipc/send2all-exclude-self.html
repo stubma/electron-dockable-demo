@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>send2all-exclude-self</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h1>Testing...</h1>
+
+    <script>
+      (() => {
+        'use strict';
+        const Electron = require('electron');
+
+        Electron.ipcRenderer.on('foobar:say-hello', (event, foo, bar) => {
+          event.sender.send('foobar:reply', foo, bar);
+        });
+
+        Editor.Ipc.sendToAll('foobar:say-hello', 'foo', 'bar', Editor.Ipc.option({
+          excludeSelf: true
+        }));
+      })();
+    </script>
+  </body>
+</html>

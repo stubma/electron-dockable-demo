@@ -1,0 +1,159 @@
+@element: 'hint';
+@import (multiple) 'theme.less';
+
+@border_size: 1px;
+@arrow_size: 8px;
+
+:host {
+  display: block;
+  z-index: 1;
+  color: @text_color;
+  white-space: normal;
+
+  .box {
+    position: relative;
+    background: @bg_color;
+    border: @border_size solid @border_color;
+    border-radius: 3px;
+    padding: 5px 8px;
+  }
+
+  .arrow {
+    z-index: 2;
+    position: absolute;
+    display: none;
+  }
+
+  .arrow:before {
+    position: absolute;
+    content: '';
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    background: @bg_color;
+    border-color: @border_color;
+    border-style: solid;
+    width: @arrow_size;
+    height: @arrow_size;
+  }
+}
+
+:host(.shadow) {
+  .box {
+    box-shadow: 0 0 15px 2px rgba(0,0,0,0.8);
+  }
+}
+
+:host(.top) {
+  margin-top: 10px;
+
+  .arrow {
+    display: block;
+    margin-top: -1px;
+    top: 0;
+  }
+  .arrow:before {
+    border-width: @border_size 0 0 @border_size;
+  }
+}
+
+:host(.bottom) {
+  margin-bottom: 10px;
+
+  .arrow {
+    display: block;
+    margin-top: 1px;
+    top: 100%;
+  }
+  .arrow:before {
+    border-width: 0 @border_size @border_size 0;
+  }
+}
+
+:host(.left) {
+  margin-left: 10px;
+
+  .arrow {
+    display: block;
+    margin-left: -1px;
+    left: 0;
+  }
+  .arrow:before {
+    border-width: 0 0 @border_size @border_size;
+  }
+}
+
+:host(.right) {
+  margin-right: 10px;
+
+  .arrow {
+    display: block;
+    margin-left: 1px;
+    left: 100%;
+  }
+  .arrow:before {
+    border-width: @border_size @border_size 0 0;
+  }
+}
+
+/*-------------------
+        Size
+--------------------*/
+
+// NOTE: we need to explicit the height, otherwise button will be stretch in flex wrapper
+
+:host(.mini) {
+  font-size: @mini;
+}
+
+:host(.tiny) {
+  font-size: @tiny;
+}
+
+:host(.small) {
+  font-size: @small;
+}
+
+:host {
+  font-size: @medium;
+}
+
+:host(.large) {
+  font-size: @large;
+}
+
+:host(.big) {
+  font-size: @big;
+}
+
+:host(.huge) {
+  font-size: @huge;
+}
+
+:host(.massive) {
+  font-size: @massive;
+}
+
+/*-------------------
+  Colored
+--------------------*/
+
+.color(@clr, @text_color, @bg_color) {
+  @border_color: @bg_color + 50%;
+
+  :host(.@{clr}) {
+    color: @text_color;
+
+    .box {
+      border-color: @border_color;
+      background: @bg_color;
+    }
+
+    .arrow:before {
+      background: @bg_color;
+      border-color: @border_color;
+    }
+  }
+}
+
+.color(red, #ddd, @red);
+.color(green, #fff, @green);
+.color(blue, #fff, @blue);

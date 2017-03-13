@@ -1,0 +1,10 @@
+{
+  "name": "editor-framework-demo",
+  "productName": "Editor Framework Demo",
+  "description": "An editor-framework demo.",
+  "version": "1.0.0",
+  "author": "Johnny Wu",
+  "main": "runner.js",
+  "dependencies": {
+  }
+}

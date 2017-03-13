@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>send2main-reply-nested</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h1>Testing...</h1>
+
+    <script>
+      (() => {
+        'use strict';
+
+        Editor.Ipc.sendToMain('foobar:say-hello', 'foo', 'bar', (err, foo, bar) => {
+          Editor.Ipc.sendToMain('foobar:say-hello-nested', foo, bar, (err, foo, bar) => {
+            Editor.Ipc.sendToMain('foobar:reply', foo, bar);
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "localize",
+  "version": "0.0.1",
+  "description": "Test i18n",
+  "author": "Firebox Technology",
+  "main": "main.js",
+  "main-menu": {
+    "TODO/TODO": {
+      "message": "localize:open"
+    }
+  },
+  "panel": {
+    "main": "panel/panel.js",
+    "type": "dockable",
+    "title": "Localize",
+    "width": 800,
+    "height": 600
+  }
+}

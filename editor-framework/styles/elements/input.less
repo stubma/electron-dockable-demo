@@ -1,0 +1,113 @@
+@element: 'input';
+@import (multiple) 'theme.less';
+
+:host {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+
+  width: auto;
+  margin: 0 0.25em 0 0;
+  outline: none;
+
+  cursor: default;
+}
+
+input {
+  font-family: @page_font;
+
+  border: 0;
+  margin: 0;
+  padding: 0.2em 0.6em;
+  width: 100%;
+
+  display: inline-block;
+  outline: none;
+
+  border-radius: @border_radius;
+  border: 1px solid @border_color;
+  box-shadow: inset 0 0 3px 1px rgba(0,0,0,0.3);
+
+  background: @bg_color;
+  color: @text_color;
+}
+
+input:focus {
+  color: @text_color_focus;
+}
+
+input::-webkit-input-placeholder {
+  font-style: italic;
+  color: @placeholder_text_color;
+}
+
+input::selection {
+  color: white;
+  background: @select_color;
+}
+
+:host(:hover) {
+  input {
+    border-color: @border_color_hover;
+  }
+}
+
+:host([focused]) {
+  input {
+    border-color: @focus_color;
+  }
+}
+
+:host([unnavigable]) {
+  input {
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.23);
+  }
+}
+
+:host([is-disabled]) {
+  pointer-events: none;
+
+  input {
+    color: @text_color_disable;
+    border-color: @border_color - 50%;
+    background: @bg_color + 20%;
+  }
+}
+
+
+/*-------------------
+        Size
+--------------------*/
+
+:host(.mini) input {
+  font-size: @mini;
+}
+
+:host(.tiny) input {
+  font-size: @tiny;
+}
+
+:host(.small) input {
+  font-size: @small;
+}
+
+:host input {
+  font-size: @medium;
+}
+
+:host(.large) input {
+  font-size: @large;
+}
+
+:host(.big) input {
+  font-size: @big;
+}
+
+:host(.huge) input {
+  font-size: @huge;
+}
+
+:host(.massive) input {
+  font-size: @massive;
+}

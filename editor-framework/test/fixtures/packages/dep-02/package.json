@@ -1,0 +1,7 @@
+{
+  "name": "dep-02",
+  "version": "0.0.1",
+  "description": "A Simple Package Test Fixture",
+  "author": "Firebox Technology",
+  "main": "main.js"
+}

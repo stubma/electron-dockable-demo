@@ -1,0 +1,71 @@
+@element: 'color';
+@import (multiple) 'theme.less';
+
+:host {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+
+  width: 100px;
+  height: 24px;
+  min-height: 24px;
+  margin: 0 0.25em 0 0;
+  outline: none;
+
+  border: 1px solid @border_color;
+  background: @bg_color;
+
+  cursor: pointer;
+}
+
+.inner {
+  .fit();
+  border: 1px solid @inner_border_color;
+}
+
+.rgb {
+  width: 100%;
+  height: 80%;
+
+  background: white;
+}
+
+.alpha {
+  width: 50%;
+  height: 20%;
+  box-sizing: border-box;
+
+  background: white;
+  border-top: 1px solid @inner_border_color;
+}
+
+.mask {
+  .fit();
+
+  display: none;
+  opacity: 0.5;
+  background-image: url('theme://img/transparent-bg.png');
+}
+
+:host(:hover) {
+  border-color: @border_color_hover;
+}
+
+:host([focused]) {
+  border-color: @focus_color;
+}
+
+:host([unnavigable]) {
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.23);
+}
+
+:host([is-disabled]) {
+  pointer-events: none;
+
+  border-color: @border_color;
+
+  .mask {
+    display: block;
+  }
+}

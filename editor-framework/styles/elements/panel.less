@@ -1,0 +1,38 @@
+@element: 'panel';
+@import (multiple) 'theme.less';
+
+:host {
+  .layout-vertical();
+
+  position: relative;
+  box-sizing: border-box;
+
+  color: @page_text_color;
+  cursor: default;
+}
+
+.border {
+  .flex(1);
+
+  position: relative;
+  border: 1px solid @panel_border_color;
+}
+
+.frame-wrapper {
+  .fit();
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background-color: @panel_bg;
+}
+
+.frame-wrapper:focus {
+  outline: none;
+}
+
+/* :host([focused]) .frame-wrapper {            */
+/*   border: 1px solid @panel_border_color_focus; */
+/* }                                            */

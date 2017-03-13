@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+*.log
+*.py[cod]
+*.aps
+*.suo
+*.sdf
+*.opensdf
+*.xcworkspace
+*.vcxproj.user
+xcuserdata
+~*

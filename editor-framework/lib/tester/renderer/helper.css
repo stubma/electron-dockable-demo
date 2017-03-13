@@ -1,0 +1,45 @@
+/* Ripple Out */
+@keyframes ripple-out {
+  100% {
+    top: -20px;
+    right: -20px;
+    bottom: -20px;
+    left: -20px;
+    opacity: 0;
+  }
+}
+
+.mouse-hint {
+  display: block;
+  z-index: 1999;
+  pointer-events: none;
+
+  border: 1px solid #fff;
+  background: rgba( 128, 128, 128, 0.5 );
+  border-radius: 100%;
+}
+
+.mouse-hint:before {
+  content: '';
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.mouse-hint.down {
+  border-color: #ff0;
+  background: rgba( 128, 128, 0, 0.5 );
+}
+
+.mouse-hint.down:before {
+  border-color: #ff0;
+}
+
+.mouse-hint.moving:before {
+  animation: ripple-out 0.5s infinite;
+  animation-timing-function: ease-out;
+}

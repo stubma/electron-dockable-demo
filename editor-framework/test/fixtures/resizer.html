@@ -1,0 +1,57 @@
+<template id="horizontal">
+  <style>
+    .fit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .hbox {
+      display: flex;
+      flex-direction: row;
+
+      margin: 10px;
+    }
+
+    .box {
+      border: 1px solid #888;
+    }
+  </style>
+
+  <ui-dock id="container" class="hbox fit" row>
+    <ui-dock id="box1" class="box" width="200" min-width="100"></ui-dock>
+    <ui-dock id="box2" class="box" width="200" min-width="100"></ui-dock>
+    <ui-dock id="box3" class="box" width="200" min-width="100"></ui-dock>
+  </ui-dock>
+</template>
+
+<template id="vertical">
+  <style>
+    .fit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .vbox {
+      display: flex;
+      flex-direction: column;
+
+      margin: 10px;
+    }
+
+    .box {
+      border: 1px solid #888;
+    }
+  </style>
+
+  <ui-dock id="container" class="vbox fit">
+    <ui-dock id="box1" class="box" height="200" min-height="100"></ui-dock>
+    <ui-dock id="box2" class="box" height="200" min-height="100"></ui-dock>
+    <ui-dock id="box3" class="box" height="200" min-height="100"></ui-dock>
+  </ui-dock>
+</template>

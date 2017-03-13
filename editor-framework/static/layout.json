@@ -1,0 +1,15 @@
+{
+  "docks": [
+    {
+      "active": 0,
+      "panels": [
+        "console"
+      ],
+      "type": "panel",
+      "height": 300
+    }
+  ],
+  "no-collapse": true,
+  "row": false,
+  "type": "dock"
+}

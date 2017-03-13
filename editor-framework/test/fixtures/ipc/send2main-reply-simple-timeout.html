@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>send2main-reply-simple-timeout</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h1>Testing...</h1>
+
+    <script>
+      (() => {
+        'use strict';
+
+        Editor.Ipc.sendToMain('foobar:say-hello', 'foo', 'bar', (err, foo, bar) => {
+          if ( err.code === 'ETIMEOUT' ) {
+            Editor.Ipc.sendToMain('foobar:timeout');
+            return;
+          }
+
+          Editor.Ipc.sendToMain('foobar:error');
+        }, 200);
+      })();
+    </script>
+  </body>
+</html>

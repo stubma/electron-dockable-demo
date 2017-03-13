@@ -1,0 +1,60 @@
+{
+  "author": {
+    "name": "Luma"
+  },
+  "dependencies": {
+    "async": "^2.0.0",
+    "chalk": "^1.1.1",
+    "chokidar": "^1.6.0",
+    "chroma-js": "^1.1.1",
+    "del": "^2.2.0",
+    "diff": "^2.2.1",
+    "find-up": "^1.1.0",
+    "fire-fs": "^0.2.4",
+    "fire-path": "^0.1.9",
+    "fire-url": "^0.1.7",
+    "globby": "^6.0.0",
+    "highlight.js": "^9.4.0",
+    "lodash": "^4.13.0",
+    "mousetrap": "^1.6.0",
+    "node-polyglot": "^2.0.0",
+    "os-locale": "1.4.0",
+    "remarkable": "^1.6.2",
+    "semver": "^5.3.0",
+    "sinon": "^1.17.3",
+    "tap": "6.x",
+    "tap-mocha-reporter": "git+https://github.com/jwu/tap-mocha-reporter.git",
+    "winston": "^2.2.0",
+    "yargs": "^5.0.0"
+  },
+  "description": "A simple framework for making panel based applications.",
+  "devDependencies": {
+    "devtron": "^1.1.0",
+    "electron": "^1.4.1",
+    "gulp": "3.9.0",
+    "gulp-babel": "6.1.1",
+    "gulp-less": "3.0.5",
+    "gulp-sequence": "0.4.4",
+    "less": "^2.6.1",
+    "less-plugin-clean-css": "^1.5.1"
+  },
+  "directories": {},
+  "license": "MIT",
+  "name": "editor-framework",
+  "nativeModules": [
+    "chokidar"
+  ],
+  "optionalDependencies": {},
+  "scripts": {
+    "build": "node ./tasks/build-css.js",
+    "build:dev": "node ./tasks/build-css.js --dev",
+    "build:native": "node ./tasks/build-native.js",
+    "build:node-inspector": "node ./tasks/build-node-inspector.js",
+    "clear": "sh ./tasks/remove-settings.sh",
+    "start": "node ./tasks/run-dev.js",
+    "start:no-dev": "node ./tasks/run.js",
+    "start:node-inspector": "node ./tasks/run-node-inspector.js",
+    "test": "node ./tasks/run-tests.js"
+  },
+  "version": "1.0.0"
+}

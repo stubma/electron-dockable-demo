@@ -1,0 +1,34 @@
+<template id="simple">
+  <style>
+    .fit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .hbox {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #container {
+      margin: 5px;
+    }
+
+    .point {
+      border: 2px solid #0f0;
+      border-radius: 100%;
+      width: 5px;
+      height: 5px;
+      position: absolute;
+    }
+  </style>
+
+  <div id="container" class="hbox fit">
+    <canvas class="fit">
+    </canvas>
+    <div id="point" class="point"></div>
+  </div>
+</template>

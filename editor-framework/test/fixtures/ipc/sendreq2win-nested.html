@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>sendreq2win-nested</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h1>Testing...</h1>
+
+    <script>
+      (() => {
+        'use strict';
+        const Electron = require('electron');
+
+        Electron.ipcRenderer.on('foobar:say-hello', (event, foo, bar) => {
+          event.reply(null,foo,bar);
+        });
+
+        Electron.ipcRenderer.on('foobar:say-hello-nested', (event, foo, bar) => {
+          event.reply(null,foo,bar);
+        });
+      })();
+    </script>
+  </body>
+</html>

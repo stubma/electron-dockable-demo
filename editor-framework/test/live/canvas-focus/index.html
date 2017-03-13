@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>test</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        margin: 10px;
+      }
+
+      .wrapper {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      .wrapper:focus {
+        border: 1px solid #09f;
+      }
+
+      .sub-wrapper {
+        width: 200px;
+        height: 200px;
+
+        border: 1px solid white;
+      }
+
+      .sub-wrapper:focus {
+        border: 1px solid #09f;
+      }
+
+      canvas {
+        width: 200px;
+        height: 200px;
+
+        border: 1px solid red;
+      }
+
+      canvas:focus {
+        border: 1px solid #09f;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Testing...</h1>
+    <div class="wrapper" tabindex="-1">
+      <canvas id="canvas" tabindex="-1"></canvas>
+    </div>
+
+    <div class="wrapper" tabindex="-1">
+      <div id="nonCanvas" class="sub-wrapper" tabindex="-1"></div>
+    </div>
+
+    <script>
+      var canvas = document.getElementById('canvas');
+      var nonCanvas = document.getElementById('nonCanvas');
+
+      canvas.addEventListener('keydown', () => { console.log('canvas keydown'); });
+      canvas.parentElement.addEventListener('keydown', () => { console.log('canvas wrapper keydown'); });
+
+      nonCanvas.addEventListener('keydown', () => { console.log('non-canvas keydown'); });
+      nonCanvas.parentElement.addEventListener('keydown', () => { console.log('non-canvas wrapper keydown'); });
+    </script>
+  </body>
+</html>

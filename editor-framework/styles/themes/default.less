@@ -1,0 +1,173 @@
+/*-------------------
+       Fonts
+--------------------*/
+
+/* @font_name : 'Lato'; */
+/* @header_font : @font_name, 'Helvetica Neue', Arial, Helvetica, sans-serif; */
+/* @page_font : @font_name, 'Helvetica Neue', Arial, Helvetica, sans-serif; */
+
+@font_name : Roboto;
+@header_font : @font_name,-apple-system,BlinkMacSystemFont,'Helvetica Neue','Segoe UI','Oxygen','Ubuntu','Cantarell','Open Sans',sans-serif;
+@page_font: @font_name,-apple-system,BlinkMacSystemFont,'Helvetica Neue','Segoe UI','Oxygen','Ubuntu','Cantarell','Open Sans',sans-serif;
+
+@font_smoothing : subpixel-antialiased;
+
+/*-------------------
+  Color
+--------------------*/
+
+@red : #b54344;
+@green : #6b9e51;
+@blue : #4281b6;
+
+/*-------------------
+      Base Sizes
+--------------------*/
+
+/* This is the single variable that controls them all */
+@em_size: 12px;
+
+/* The size of page text  */
+@font_size: 12px;
+
+@line_height: 1em;
+
+/*-------------------
+        Page
+--------------------*/
+
+@page_text_color: #bdbdbd;
+@page_text_primary_color: #fd942b;
+/* @page_select_color: #007acc; */
+@page_select_color: #09f;
+@page_bg: #333;
+@page_section_color: #666;
+
+@thumb_bg : #7d7d7d;
+@scrollbar_bg : rgba(0, 0, 0, 0.5);
+
+/*-------------------
+        Element
+--------------------*/
+
+@el_focus_color: #fd942b;
+@el_border_color: #171717;
+@el_border_color_hover: #eee;
+
+/*-------------------
+        Dock
+--------------------*/
+
+// dock-mask
+@dockmask_border_color: #09f;
+@dockmask_bg: rgba(0,128,255,0.3);
+
+// tab-mask
+@tabmask_bg: rgba(255,128,0,0.15);
+@tabmask_insert_color: #c7722c;
+
+// panel
+@panel_bg: #474747;
+@panel_border_color: #212121;
+
+@tab_min_width: 76px;
+@tab_font_size: 12px;
+@tabbar_bg: #333;
+@tabbar_height: 24px;
+@tab_text_color: #aaa;
+@tab_icon_size: 16px;
+@tab_bg_active: @panel_bg;
+@tab_bg_deactive: @tabbar_bg;
+
+// panel:focus
+@panel_border_color_focus: #09f;
+@tab_bg_focus: @panel_border_color_focus - 70%;
+
+// panel:dirty
+@tab_bg_dirty: @red;
+
+/*-------------------
+        Sizes
+--------------------*/
+
+/*
+  Sizes are all expressed in terms of 14px/em (default em)
+  This ensures these "ratios" remain constant despite changes in EM
+*/
+
+/* @mini_size    : (10 / 14); */
+/* @tiny_size    : (12 / 14); */
+/* @small_size   : (13 / 14); */
+/* @medium_size  : (14 / 14); */
+/* @large_size   : (16 / 14); */
+/* @big_size     : (18 / 14); */
+/* @huge_size    : (20 / 14); */
+/* @massive_size : (24 / 14); */
+
+@mini_size    : (8 / 12);
+@tiny_size    : (10 / 12);
+@small_size   : (11 / 12);
+@medium_size  : (12 / 12);
+@large_size   : (14 / 12);
+@big_size     : (16 / 12);
+@huge_size    : (18 / 12);
+@massive_size : (22 / 12);
+
+/*-------------------
+       Em Sizes
+--------------------*/
+
+/*
+  This rounds @size values to the closest pixel then expresses that value in (r)em.
+  This ensures all size values round to exact pixels
+*/
+@mini    : unit( round(@mini_size * @em_size) / @em_size, rem );
+@tiny    : unit( round(@tiny_size * @em_size) / @em_size, rem );
+@small   : unit( round(@small_size * @em_size) / @em_size, rem );
+@medium  : unit( round(@medium_size * @em_size) / @em_size, rem );
+@large   : unit( round(@large_size * @em_size) / @em_size, rem );
+@big     : unit( round(@big_size * @em_size) / @em_size, rem );
+@huge    : unit( round(@huge_size * @em_size) / @em_size, rem );
+@massive : unit( round(@massive_size * @em_size) / @em_size, rem );
+
+/*-------------------
+  Exact Pixel Values
+--------------------*/
+/*
+  These are used to specify exact pixel values in em
+  for things like borders that remain constantly
+  sized as em_size adjusts
+
+  Since there are many more sizes than names for sizes,
+  these are named by their original pixel values.
+*/
+
+@1px  : unit( ( 1 / @em_size), rem );
+@2px  : unit( ( 2 / @em_size), rem );
+@3px  : unit( ( 3 / @em_size), rem );
+@4px  : unit( ( 4 / @em_size), rem );
+@5px  : unit( ( 5 / @em_size), rem );
+@6px  : unit( ( 6 / @em_size), rem );
+@7px  : unit( ( 7 / @em_size), rem );
+@8px  : unit( ( 8 / @em_size), rem );
+@9px  : unit( ( 9 / @em_size), rem );
+@10px : unit( (10 / @em_size), rem );
+@11px : unit( (11 / @em_size), rem );
+@12px : unit( (12 / @em_size), rem );
+@13px : unit( (13 / @em_size), rem );
+@14px : unit( (14 / @em_size), rem );
+
+@1px_em  : unit((1 / @em_size), em );
+@2px_em  : unit((2 / @em_size), em );
+@3px_em  : unit((3 / @em_size), em );
+@4px_em  : unit((4 / @em_size), em );
+@5px_em  : unit((5 / @em_size), em );
+@6px_em  : unit((6 / @em_size), em );
+@7px_em  : unit((7 / @em_size), em );
+@8px_em  : unit((8 / @em_size), em );
+@9px_em  : unit((9 / @em_size), em );
+@10px_em : unit((10 / @em_size), em );
+@11px_em : unit((11 / @em_size), em );
+@12px_em : unit((12 / @em_size), em );
+@13px_em : unit((13 / @em_size), em );
+@14px_em : unit((14 / @em_size), em );

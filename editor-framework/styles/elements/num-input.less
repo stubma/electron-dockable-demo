@@ -1,0 +1,227 @@
+@element: 'num-input';
+@import (multiple) 'theme.less';
+
+@import url('theme://globals/fontello.css');
+
+:host {
+  display: inline-flex;
+  flex-direction: row;
+  position: relative;
+  box-sizing: border-box;
+
+  width: auto;
+  margin: 0 0.25em 0 0;
+  outline: none;
+
+  cursor: default;
+}
+
+input {
+  font-family: @page_font;
+
+  border: 0;
+  margin: 0;
+  padding: 0.2em 0.6em;
+  width: 100%;
+
+  display: inline-block;
+  outline: none;
+
+  border-top-left-radius: @border_radius;
+  border-bottom-left-radius: @border_radius;
+  border: 1px solid @border_color;
+  border-right: none;
+  box-shadow: inset 0 0 3px 1px rgba(0,0,0,0.3);
+
+  background: @bg_color;
+  color: @text_color;
+}
+
+input:focus {
+  color: @text_color_focus;
+}
+
+input::-webkit-input-placeholder {
+  font-style: italic;
+  color: @placeholder_text_color;
+}
+
+input::selection {
+  color: white;
+  background: @select_color;
+}
+
+.spin-wrapper {
+  .layout-vertical();
+
+  outline: 0;
+  box-sizing: border-box;
+  color: @spin_icon_color;
+
+  border-top-right-radius: @border_radius;
+  border-bottom-right-radius: @border_radius;
+  border: 1px solid @border_color;
+  border-left: none;
+}
+
+.spin {
+  flex: 1;
+  justify-content: center;
+
+  text-align: center;
+  background-color: @spin_bg_color;
+
+  cursor: pointer;
+}
+
+.spin:hover {
+  color: @border_color_hover;
+}
+
+.spin[pressed] {
+  color: @focus_color;
+  background-color: @spin_bg_color - 20%;
+}
+
+.spin-div {
+  flex: none;
+  border-top: 1px solid #353535;
+  border-bottom: 1px solid #595959;
+}
+
+.spin.up {
+  border-top-right-radius: @border_radius;
+}
+
+.spin.down {
+  border-bottom-right-radius: @border_radius;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  width: 0.8em;
+}
+
+:host(:hover) {
+  input {
+    border-color: @border_color_hover;
+  }
+  .spin-wrapper {
+    border-color: @border_color_hover;
+  }
+}
+
+:host([focused]) {
+  input {
+    border-color: @focus_color;
+  }
+  .spin-wrapper {
+    border-color: @focus_color;
+  }
+}
+
+:host([unnavigable]) {
+  input {
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.23);
+  }
+  .spin-wrapper {
+    border-color: rgba(87,87,87,1.0);
+  }
+}
+
+:host([is-disabled]) {
+  pointer-events: none;
+
+  input {
+    color: @text_color_disable;
+    border-color: @border_color - 50%;
+    background: @bg_color + 20%;
+  }
+  .spin-wrapper {
+    border-color: @border_color - 50%;
+  }
+  .spin {
+    opacity: 0.5;
+  }
+  .spin-div {
+    opacity: 0.5;
+  }
+}
+
+
+/*-------------------
+        Size
+--------------------*/
+
+:host(.mini) {
+  input {
+    font-size: @mini;
+  }
+  .spin-wrapper {
+    font-size: @mini - 0.2;
+  }
+}
+
+:host(.tiny) {
+  input {
+    font-size: @tiny;
+  }
+  .spin-wrapper {
+    font-size: @tiny - 0.2;
+  }
+}
+
+:host(.small) {
+  input {
+    font-size: @small;
+  }
+  .spin-wrapper {
+    font-size: @small - 0.2;
+  }
+}
+
+:host {
+  input {
+    font-size: @medium;
+  }
+  .spin-wrapper {
+    font-size: @medium - 0.2;
+  }
+}
+
+:host(.large) {
+  input {
+    font-size: @large;
+  }
+  .spin-wrapper {
+    font-size: @large - 0.2;
+  }
+}
+
+:host(.big) {
+  input {
+    font-size: @big;
+  }
+  .spin-wrapper {
+    font-size: @big - 0.2;
+  }
+}
+
+:host(.huge) {
+  input {
+    font-size: @huge;
+  }
+  .spin-wrapper {
+    font-size: @huge - 0.2;
+  }
+}
+
+:host(.massive) {
+  input {
+    font-size: @massive;
+  }
+  .spin-wrapper {
+    font-size: @massive - 0.2;
+  }
+}

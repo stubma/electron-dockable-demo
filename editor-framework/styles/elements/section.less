@@ -1,0 +1,87 @@
+@element: 'section';
+@import (multiple) 'theme.less';
+
+@import url('theme://globals/fontello.css');
+
+:host {
+  .layout-vertical();
+  .layout-children(stretch, center);
+
+  position: relative;
+  box-sizing: border-box;
+
+  outline: 0;
+}
+
+.wrapper {
+  cursor: pointer;
+
+  position: relative;
+  box-sizing: border-box;
+  outline: 0;
+
+  width: 100%;
+  min-height: 24px;
+  max-height: 24px;
+  margin: 5px 0px;
+
+  .layout-horizontal();
+  .layout-children(center, flex-start);
+
+  color: @text_color;
+  font-weight: bold;
+  border-bottom: 1px solid @section_line_color;
+}
+
+.wrapper > * {
+  margin-right: 3px;
+}
+
+.wrapper > *:last-child {
+  margin-right: 0px;
+}
+
+::content > .header {
+  .layout-horizontal();
+  .layout-children(center, flex-start);
+  flex: 1;
+
+  h1,h2,h3,h4,h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  width: 10px;
+  margin: 0px;
+}
+
+.fold {
+  cursor: pointer;
+}
+
+:host([hovering]) {
+  .wrapper {
+    color: @text_color_hover;
+  }
+}
+
+:host([focused]) {
+  .wrapper {
+    color: @text_color_focused;
+  }
+}
+
+:host([is-disabled]) {
+  .wrapper {
+    color: @text_color_disabled;
+  }
+}
+
+:host([folded]) {
+  ::content > :not(.header) {
+    display: none !important;
+  }
+}

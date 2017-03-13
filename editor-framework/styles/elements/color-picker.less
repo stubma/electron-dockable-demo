@@ -1,0 +1,228 @@
+@element: 'color-picker';
+@import (multiple) 'theme.less';
+
+@import url('theme://globals/fontello.css');
+
+:host {
+  padding: 10px 6px;
+
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+
+  outline: none;
+
+  border: 1px solid @border_color;
+  border-radius: 3px;
+  background: @bg_color;
+  box-shadow: 0 0 15px 2px rgba(0,0,0,0.8);
+
+  cursor: default;
+  color: @text_color;
+}
+
+.ctrl {
+  [class^="icon-"]:before,
+  [class*=" icon-"]:before {
+    width: 0px;
+  }
+}
+
+.hbox, .vbox {
+  margin-bottom: 10px;
+}
+.hbox:last-child, .vbox:last-child {
+  margin-bottom: 0px;
+}
+
+.hbox {
+  .layout-horizontal();
+  position: relative;
+}
+
+.vbox {
+  .layout-vertical();
+  position: relative;
+}
+
+.ctrl {
+  margin-right: 6px;
+  outline: 0;
+  border: 1px solid @el_border_color;
+}
+
+.ctrl:last-child {
+  margin-right: 0px;
+}
+
+.hue {
+  position: relative;
+  width: 20px;
+  height: 150px;
+
+  background-image: url('theme://img/hue.png');
+  background-position: 0px 0px;
+}
+
+.hue-handle {
+  position: absolute;
+  color: white;
+  left: 0px;
+}
+
+.hue-handle i {
+  position: absolute;
+  font-size: 12px;
+  top: -6px;
+  left: -6px;
+}
+
+.color {
+  position: relative;
+  width: 150px;
+  height: 150px;
+
+  background-image: url('theme://img/hue.png');
+  background-position: -40px 0px;
+}
+
+.color-handle {
+  position: absolute;
+  color: black;
+}
+
+.color-handle i {
+  position: absolute;
+  font-size: 12px;
+  top: -6px;
+  left: -8px;
+}
+
+.alpha {
+  position: relative;
+  width: 20px;
+  height: 150px;
+
+  background-image: url('theme://img/hue.png');
+  background-color: black;
+  background-position: -20px 0px;
+}
+
+.alpha-handle {
+  position: absolute;
+  color: white;
+  right: 0px;
+}
+
+.alpha i {
+  position: absolute;
+  font-size: 12px;
+  top: -6px;
+  right: -2px;
+}
+
+.prop {
+  .layout-horizontal();
+  .layout-children(center, center);
+
+  span {
+    margin: 0 0.25em 0 0;
+    font-weight: bold;
+
+    color: #ddd;
+    text-align: center;
+
+    width: 18px;
+    height: 16px;
+    border-radius: 3px;
+  }
+
+  .red {
+    background: @red;
+  }
+
+  .green {
+    background: @green;
+  }
+
+  .blue {
+    background: @blue;
+  }
+
+  .gray {
+    background: #333;
+  }
+
+  ui-slider {
+    flex: 1;
+  }
+}
+
+.hex-field {
+  .layout-horizontal();
+  .layout-children(center, flex-start);
+
+  .color-block {
+    position: relative;
+    border: 1px solid @el_border_color;
+
+    background-image: url('theme://img/transparent-bg.png');
+    background-position: 0px 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .color-block.new {
+    border-left: 0px;
+  }
+
+  .color-inner {
+    .fit();
+  }
+
+  .space {
+    flex: 1;
+  }
+
+  .label {
+    margin: 0 0.5em 0 0;
+  }
+
+  ui-input {
+    width: 80px;
+  }
+}
+
+.title {
+  .layout-horizontal();
+  .layout-children(center, space-between);
+}
+
+.palette {
+  width: 200px;
+  flex-wrap: wrap;
+
+  .layout-children(center, start);
+}
+
+.color-box {
+  position: relative;
+  border: 1px solid @el_border_color;
+
+  background-image: url('theme://img/transparent-bg.png');
+  width: 15px;
+  height: 15px;
+
+  margin-top: 3px;
+  margin-left: 3px;
+
+  cursor: pointer;
+}
+
+.color-box:hover {
+  border-color: @el_border_color_hover;
+}
+
+.color-box .inner {
+  .fit();
+}

@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>send2core-in-order</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h1>Testing...</h1>
+
+    <script>
+      (() => {
+        'use strict';
+
+        const Electron = require('electron');
+
+        Electron.ipcRenderer.on('foobar:reply-from-core', () => {
+          Editor.Ipc.sendToMain( 'foobar:say-hello-04' );
+          Editor.Ipc.sendToMain( 'foobar:say-hello-05' );
+        });
+
+        Editor.Ipc.sendToMain( 'foobar:say-hello-01' );
+        Editor.Ipc.sendToMain( 'foobar:say-hello-02' );
+        Editor.Ipc.sendToMain( 'foobar:say-hello-03' );
+      })();
+    </script>
+  </body>
+</html>

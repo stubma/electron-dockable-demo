@@ -1,0 +1,19 @@
+{
+  "name": "simple",
+  "version": "0.0.1",
+  "description": "A Simple Package Test Fixture",
+  "author": "Firebox Technology",
+  "main": "main.js",
+  "main-menu": {
+    "Test Case/Simple": {
+      "message": "demo-simple:open"
+    }
+  },
+  "panel": {
+    "main": "panel/panel.js",
+    "type": "dockable",
+    "title": "Simple",
+    "width": 800,
+    "height": 600
+  }
+}

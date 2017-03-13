@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h1>Testing...</h1>
+
+    <script>
+      (() => {
+        'use strict';
+        document.addEventListener('DOMContentLoaded', () => {
+          console.info('DOMContentLoaded');
+        });
+
+        document.onreadystatechange = () => {
+          console.info('readystatechange = ' + document.readyState);
+        };
+
+        window.onload = () => {
+          console.info('window.onload');
+        };
+
+      })();
+    </script>
+  </body>
+</html>

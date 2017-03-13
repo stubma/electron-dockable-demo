@@ -1,0 +1,208 @@
+@element: 'text-area';
+@import (multiple) 'theme.less';
+
+:host {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+
+  width: auto;
+  margin: 0 0.25em 0 0;
+  outline: none;
+
+  cursor: default;
+}
+
+.back {
+  .fit();
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: @bg_color;
+  border-radius: @border_radius;
+
+  color: @hint_text_color;
+  font-size: 1.5em;
+  font-weight: bold;
+
+  span {
+    display: none;
+  }
+}
+
+textarea {
+  font-family: @page_font;
+
+  margin: 0;
+  padding: 0.2em 0.6em;
+  width: 100%;
+  min-height: 4em;
+
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+
+  border-radius: @border_radius;
+  border: 1px solid @border_color;
+  box-shadow: inset 0 0 3px 1px rgba(0,0,0,0.3);
+
+  background: transparent;
+  color: @text_color;
+
+  outline: none;
+  resize: none;
+}
+
+textarea:focus {
+  color: @text_color_focus;
+}
+
+textarea::-webkit-input-placeholder {
+  font-style: italic;
+  color: @placeholder_text_color;
+}
+
+textarea::selection {
+  color: white;
+  background: @select_color;
+}
+
+:host([resize]) {
+  textarea {
+    resize: both;
+  }
+}
+
+:host([resize-v]) {
+  textarea {
+    resize: vertical;
+  }
+}
+
+:host([resize-h]) {
+  textarea {
+    resize: horizontal;
+  }
+}
+
+:host(:hover) {
+  textarea {
+    border-color: @border_color_hover;
+  }
+}
+
+:host([focused]) {
+  textarea {
+    border-color: @focus_color;
+  }
+}
+
+:host([unnavigable]) {
+  textarea {
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.23);
+  }
+}
+
+:host([is-disabled]) {
+  pointer-events: none;
+
+  textarea {
+    color: @text_color_disable;
+    border-color: @border_color - 50%;
+    background: @bg_color + 20%;
+  }
+}
+
+/*-------------------
+        Size
+--------------------*/
+
+:host(.mini) textarea {
+  font-size: @mini;
+}
+
+:host(.tiny) textarea {
+  font-size: @tiny;
+}
+
+:host(.small) textarea {
+  font-size: @small;
+}
+
+:host textarea {
+  font-size: @medium;
+}
+
+:host(.large) textarea {
+  font-size: @large;
+}
+
+:host(.big) textarea {
+  font-size: @big;
+}
+
+:host(.huge) textarea {
+  font-size: @huge;
+}
+
+:host(.massive) textarea {
+  font-size: @massive;
+}
+
+/*-------------------
+  resizer
+--------------------*/
+
+/* ::-webkit-resizer {                      */
+/*   cursor: pointer !important;            */
+/*   border-right: 10px solid @text_color;  */
+/*   border-bottom: 10px solid @text_color; */
+/*   border-left: 10px solid transparent;   */
+/*   border-top: 10px solid transparent;    */
+/* }                                        */
+
+/*-------------------
+  scroll bar
+--------------------*/
+
+::-webkit-scrollbar {
+  height: 11px;
+  width: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  border: 4px solid transparent;
+  background: @thumb_bg;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 5px;
+  border: 3px solid transparent;
+  background: @el_focus_color;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+  border: 5px solid transparent;
+  background: @scrollbar_bg;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-track:hover {
+  border: 5px solid transparent;
+  background: @scrollbar_bg;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}

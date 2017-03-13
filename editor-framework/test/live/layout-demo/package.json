@@ -1,0 +1,51 @@
+{
+  "name": "demo-layout",
+  "version": "0.0.1",
+  "description": "Layout Demo",
+  "author": "Firebox Technology",
+  "main": "main.js",
+  "menus": {
+    "Examples/Layout": {
+      "message": "demo-layout:reset"
+    }
+  },
+  "panels": {
+    "hierarchy": {
+      "frame": "panel/simple-view.html",
+      "title": "Hierarchy",
+      "width": 200,
+      "height": "auto",
+      "min-width": 200
+    },
+    "assets": {
+      "frame": "panel/simple-view.html",
+      "title": "Assets",
+      "width": 200,
+      "height": "auto",
+      "min-width": 200
+    },
+    "inspector": {
+      "frame": "panel/simple-view.html",
+      "title": "Inspector",
+      "width": 300,
+      "min-width": 240
+    },
+    "scene": {
+      "frame": "panel/simple-view.html",
+      "title": "Scene",
+      "width": "auto",
+      "height": "auto"
+    },
+    "game": {
+      "frame": "panel/simple-view.html",
+      "title": "Game",
+      "width": "auto",
+      "height": "auto"
+    },
+    "console": {
+      "frame": "panel/simple-view.html",
+      "title": "Console",
+      "height": "300"
+    }
+  }
+}

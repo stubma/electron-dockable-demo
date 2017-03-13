@@ -1,0 +1,59 @@
+{
+  "type": "dock",
+  "no-collpase": true,
+  "row": true,
+  "docks": [
+    {
+      "type": "dock",
+      "width": 200,
+      "min-width": 200,
+      "docks": [
+        {
+          "active": 0,
+          "type": "panel",
+          "height": 300,
+          "panels": [
+            "demo-layout.hierarchy"
+          ]
+        },
+        {
+          "active": 0,
+          "type": "panel",
+          "panels": [
+            "demo-layout.assets"
+          ]
+        }
+      ]
+    },
+    {
+      "active": 0,
+      "type": "panel",
+      "width": 300,
+      "min-width": 240,
+      "panels": [
+        "demo-layout.inspector"
+      ]
+    },
+    {
+      "type": "dock",
+      "docks": [
+        {
+          "active": 0,
+          "type": "panel",
+          "panels": [
+            "demo-layout.scene",
+            "demo-layout.game"
+          ]
+        },
+        {
+          "active": 0,
+          "type": "panel",
+          "height": 200,
+          "panels": [
+            "demo-layout.console"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+@element: 'box-container';
+@import (multiple) 'theme.less';
+
+:host {
+  display: block;
+
+  border: 1px solid @border_color;
+  border-radius: @border_radius;
+  padding: 5px;
+
+  overflow: auto;
+  outline: none;
+}
+
+:host(.shadow) {
+  box-shadow: inset 0 0 8px 2px rgba(0,0,0,0.2);
+  background: @bg_color;
+}
+
+:host([focused]) {
+  border: 1px solid @focus_color;
+}

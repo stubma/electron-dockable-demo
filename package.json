@@ -1,0 +1,34 @@
+{
+  "name": "electron-dockable-demo",
+  "version": "1.0.0",
+  "description": "Demo app for electron-dockable framework",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "Electron",
+    "appium"
+  ],
+  "author": "Luma",
+  "devDependencies": {
+    "electron": "^1.6.1"
+  },
+  "dependencies": {
+    "electron-window-state": "^4.0.2",
+    "electron-dockable": "^1.0.0"
+  },
+  "edock": {
+    "panels": [
+      {
+        "id": "Project",
+        "title": "Project",
+        "icon": "app://images/panel_project.png",
+        "closable": true,
+        "template": "app://project.html",
+        "minWidth": 200,
+        "minHeight": 200
+      }
+    ]
+  }
+}

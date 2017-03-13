@@ -1,0 +1,44 @@
+// REF: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+.fit() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.layout-vertical() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.layout-horizontal() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+/**
+ * @param {align-items} - start, end, center, stretch, baseline
+ * @param {justify-content} - start, end, center, space-between, space-around
+ */
+.layout-children(@align-items: center; @justify-content: center) {
+  align-items: @align-items;
+  justify-content: @justify-content;
+}
+
+.flex-auto() {
+  flex: 1 1 auto;
+}
+
+.flex(@ratio) {
+  flex: @ratio;
+}
+
+/* .layout-strecth() {     */
+/*   align-items: stretch; */
+/* }                       */
+
+@import (multiple) 'fx.less';

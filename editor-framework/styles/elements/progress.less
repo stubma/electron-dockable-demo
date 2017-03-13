@@ -1,0 +1,98 @@
+@element: 'progress';
+@import (multiple) 'theme.less';
+
+:host {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  padding: 2px;
+  margin: 0 0.25em 0 0;
+
+  border-radius: @border_radius;
+  background: @bg_color;
+  width: 200px;
+}
+
+.bar {
+  .layout-horizontal();
+  .layout-children(center, flex-end);
+
+  box-sizing: border-box;
+  position: relative;
+
+  background: @bar_color;
+  border-radius: @border_radius;
+  height: 100%;
+
+  transition:
+    width .3s ease,
+    background-color .3s ease
+    ;
+}
+
+.label {
+  display: none;
+
+  margin-right: .5em;
+  font-weight: bold;
+  color: black;
+}
+
+:host(.label) .bar {
+  min-width: 30px;
+}
+
+:host(.label) .label {
+  display: block;
+}
+
+:host(.mini) .label,
+:host(.tiny) .label {
+  display: none;
+}
+
+/*-------------------
+        Size
+--------------------*/
+
+// NOTE: we need to explicit the height, otherwise button will be stretch in flex wrapper
+
+:host(.mini) {
+  font-size: @mini;
+  height: 6px;
+}
+
+:host(.tiny) {
+  font-size: @tiny;
+  height: 12px;
+}
+
+:host(.small) {
+  font-size: @small;
+  height: 18px;
+}
+
+:host {
+  font-size: @medium;
+  height: 24px;
+}
+
+:host(.large) {
+  font-size: @large;
+  height: 28px;
+}
+
+:host(.big) {
+  font-size: @big;
+  height: 32px;
+}
+
+:host(.huge) {
+  font-size: @huge;
+  height: 36px;
+}
+
+:host(.massive) {
+  font-size: @massive;
+  height: 44px;
+}

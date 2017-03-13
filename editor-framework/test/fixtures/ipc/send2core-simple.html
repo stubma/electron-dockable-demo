@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>send2core-simple</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h1>Testing...</h1>
+
+    <script>
+      (() => {
+        'use strict';
+        Editor.Ipc.sendToMain( 'foobar:say-hello', 'foo', 'bar' );
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+:host{display:block;border:1px solid #666;border-radius:3px;padding:5px;overflow:auto;outline:0}:host(.shadow){box-shadow:inset 0 0 8px 2px rgba(0,0,0,.2);background:#333}:host([focused]){border:1px solid #fd942b}

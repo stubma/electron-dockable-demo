@@ -1,0 +1,28 @@
+@color-button-text: #bdbdbd;
+@color-button-bg: #4a4a4a;
+@color-button-bg-top: #5a5a5a;
+@color-button-bg-bottom: #444;
+@color-border-normal: #171717;
+@color-border-focus: #09f;
+
+:host {
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.btn {
+  font-weight: bold;
+  margin: 0px;
+  min-width: 20px;
+
+  border: 1px solid @color-border-normal;
+  border-radius: 2px;
+  padding: 4px 8px;
+
+  cursor: pointer;
+
+  /* font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  color: @color-button-text;
+  background-image: linear-gradient(@color-button-bg-top, @color-button-bg-bottom);
+}

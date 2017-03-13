@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>send2pkg-simple</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h1>Testing...</h1>
+
+    <script>
+      (() => {
+        'use strict';
+
+        Editor.Ipc.sendToPackage('foobar', 'say-hello', 'foo', 'bar');
+      })();
+    </script>
+  </body>
+</html>

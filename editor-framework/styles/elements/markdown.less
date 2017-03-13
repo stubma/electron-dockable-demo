@@ -1,0 +1,269 @@
+@element: 'markdown';
+@import (multiple) 'theme.less';
+
+@import url('theme://globals/hljs.paraiso.dark.css');
+
+:host {
+  display: block;
+  position: relative;
+  overflow: auto;
+
+  margin: 0px;
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  font-family: @font;
+  background: transparent;
+
+  cursor: auto;
+}
+
+:host, * {
+  -webkit-user-select: text;
+}
+
+:host::selection, *::selection {
+  background: @select_color;
+}
+
+/*-------------------
+  Header
+--------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 21px;
+  border-bottom: 1px solid @section_color;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+h6 {
+  font-size: 11px;
+}
+
+/*-------------------
+  Emphasis
+--------------------*/
+
+b, strong {
+  font-weight: bolder;
+}
+
+/*-------------------
+  Link
+--------------------*/
+
+a {
+  color: @link_text_color;
+  text-decoration: none;
+}
+/* DISABLE                                */
+/* a:after {                              */
+/*   font-family: "fontello";             */
+/*   content: '\e823';                    */
+
+/*   font-family: "fontello";             */
+/*   font-style: normal;                  */
+/*   font-weight: normal;                 */
+/*   speak: none;                         */
+/*   display: inline-block;               */
+/*   text-decoration: none;               */
+/*   width: 1em;                          */
+/*   margin-right: .2em;                  */
+/*   text-align: center;                  */
+/*   font-variant: normal;                */
+/*   text-transform: none;                */
+/*   line-height: 1em;                    */
+/*   margin-left: .2em;                   */
+/*   -webkit-font-smoothing: antialiased; */
+/*   -moz-osx-font-smoothing: grayscale;  */
+/* }                                      */
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+/*-------------------
+  Section
+--------------------*/
+
+hr {
+  border: 0;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 1px;
+  background-color: @section_color;
+}
+
+/*-------------------
+  List
+--------------------*/
+
+ul, ol {
+  margin-top: 0px;
+  margin-bottom: 16px;
+  padding-left: 15px;
+  list-style-position: inside;
+}
+
+ul :first-child, ol :first-child {
+  margin-top: 0;
+}
+
+ul :last-child, ol :last-child {
+  margin-bottom: 0;
+}
+
+/*-------------------
+  Blockquote
+--------------------*/
+
+blockquote {
+  margin: 0;
+  padding: 0 15px;
+  color: @text_color - 50%;
+  border-left: 4px solid @section_color;
+}
+
+/*-------------------
+  Blockquote
+--------------------*/
+
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+table th {
+  font-weight: bold;
+  color: black;
+  /* background-color: #d70; */
+  background-color: #007b32;
+}
+
+table th,
+table td {
+  padding: 6px 13px;
+}
+
+table tr {
+  background-color: @table_bg_color;
+}
+
+/* table tr:nth-child(2n) {                 */
+/*   background-color: @table_bg_color_alt; */
+/* }                                        */
+
+/*-------------------
+  Syntax Highlighting
+--------------------*/
+
+code {
+  font-size: @font_size;
+  font-family: @font_code;
+
+  background-color: @code_bg_color;
+  border-radius: 3px;
+
+  padding: 0;
+  margin: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+code:before,
+code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+pre {
+  padding: 16px;
+  overflow: auto;
+  line-height: 1.45;
+  background-color: @code_bg_color;
+  border-radius: 3px;
+}
+
+pre > code {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+}
+
+pre code:before,
+pre code:after {
+  content: normal;
+}
+
+/*-------------------
+  scroll bar
+--------------------*/
+
+::-webkit-scrollbar {
+  height: 11px;
+  width: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  border: 4px solid transparent;
+  background: @thumb_bg;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 5px;
+  border: 3px solid transparent;
+  background: @el_focus_color;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}

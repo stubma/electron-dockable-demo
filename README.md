@@ -1,2 +1,2 @@
-# electron-dockable-demo
-A demo app for using electron-dockable framework
+## What is it
+A demo app of using electron-dockable framework

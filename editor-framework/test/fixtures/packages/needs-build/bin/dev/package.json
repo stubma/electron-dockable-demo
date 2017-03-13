@@ -1,0 +1,19 @@
+{
+  "name": "needs-build",
+  "version": "0.0.2",
+  "description": "This package needs compile to bin/dev to use",
+  "author": "Firebox Technology",
+  "main": "main.js",
+  "main-menu": {
+    "Demos/Simple": {
+      "message": "demo-simple:open"
+    }
+  },
+  "panel": {
+    "main": "panel/panel.js",
+    "type": "dockable",
+    "title": "Simple",
+    "width": 800,
+    "height": 600
+  }
+}
