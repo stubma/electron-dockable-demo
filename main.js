@@ -29,8 +29,13 @@ function createWindow() {
 	// and restore the maximized or full screen state
 	mainWindowState.manage(mainWindow);
 
-	// new edock instance for this window
-	mainWindow.edock = new EDock(mainWindow);
+	// now make main window dockable
+	EDock.makeWindowDockable(mainWindow);
+
+	// append debug menu into application menu
+	if(EDock.isDebug()) {
+		installDebugMenu();
+	}
 
 	// and load the index.html of the app.
 	mainWindow.loadURL(url.format({
@@ -55,11 +60,6 @@ function createWindow() {
 		mainWindow.edock.rootWin = null;
 		mainWindow = null;
 	});
-
-	// append debug menu into application menu
-	if(EDock.isDebug()) {
-		installDebugMenu();
-	}
 }
 
 function installDebugMenu() {
