@@ -6,17 +6,12 @@
   "scripts": {
     "start": "electron ."
   },
-  "keywords": [
-    "Electron",
-    "appium"
-  ],
   "author": "Luma",
-  "devDependencies": {
-    "electron": "^1.6.1"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "electron-window-state": "^4.0.2",
-    "electron-dockable": "^1.0.0"
+    "electron": "^3.0.4",
+    "electron-dockable": "file:../electron-dockable",
+    "electron-window-state": "^5.0.2"
   },
   "edock": {
     "panels": [
